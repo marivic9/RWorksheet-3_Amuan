@@ -9,7 +9,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
+```{r name, echo = TRUE }
 #1 A. Create a data frame using the table below.
 
       respondent <- c(1:20)
@@ -234,6 +234,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 #The particular reasons for these shifts in mood could only be explained with additional context and study of the tweets.
-
+```
 
  
