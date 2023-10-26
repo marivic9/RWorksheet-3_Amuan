@@ -1,3 +1,13 @@
+---
+title: "Worksheet#4A"
+author: "Marivic Amuan"
+date: "2023-10-25"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#
 #1. The table below shows the data about shoe size and height. Create a data frame.
 
 #1A. Describe the data = AS I input each correspoding data inside the data frame, the data.frame allows me to create a table file to show the inputted datas.
@@ -40,45 +50,4 @@ correlation
 
 #RESULT: [1] 0.7766089
 
-
-#2. Construct character vector months to a factor with factor() and assign the result to factor_months_vector. Print out factor_months_vector and assert that R prints out the factor levels below the actual values.
-
-months <- c("March","April","January","November","January",
-            "September","October","September","November","August",
-            "January","November","November","February","May","August", "July","December","August","August","September","November","February", "April")
-months
-
-months <- factor(months)
-months
-
-#3. Then check the summary() of the months_vector and factor_months_vector. | Interpret the results of both vectors. Are they both equally useful in this case?
-
-months <- summary(months)
-months
-
-#4. Create a vector and factor for the table below.
-
-direction <- c( "East", "West", "North")
-direction
-
-freq <- c(1, 4, 3)
-freq
-
-newOrderData <- factor(direction,levels = c ("East", "West", "North", c(1, 4, 3)))
-print(newOrderData)
-
-#5. Enter the data below in Excel with file name = import_march.csv
-
-#5A. 
-
-read.table()
-
-
-#5B. View the dataset. Write the R scripts and its result.
-
-library(readr)
-import_march <- read_csv("/cloud/project/Worksheet#4A/import_march.csv", 
-                         na = "empty")
-View(import_march)
-
-
+```
