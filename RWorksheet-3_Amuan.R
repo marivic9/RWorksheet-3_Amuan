@@ -3,12 +3,12 @@
 
 #LETTERS
 print(LETTERS)
-print(letters)
+print(letters) 
 
 #1.A. You need to produce a vector that contains the first 11 letters.
 
-aVector <- LETTERS [1:11]
-aVector
+aVectors <- LETTERS [1:11]
+aVectors
 
 #OUTPUT =  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K"
 
