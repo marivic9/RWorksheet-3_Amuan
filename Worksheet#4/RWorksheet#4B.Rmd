@@ -1,7 +1,17 @@
 ---
 title: "RWorksheet#4B"
 author: "Marivic Amuan"
-date: "2023-11-08"
+date: "2023-11-09"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+---
+title: "RWorksheet4B"
+author: "Marivic Amuan"
+date: "2023-11-09"
 output: pdf_document
 ---
 
@@ -10,11 +20,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ``` {r}
-
 #1. Using the for loop, create an R script that will display a 5x5 matrix as shown in Figure 1. It must contain vectorA = [1,2,3,4,5] and a 5 x 5 zero matrix.
 #FOR LOOP
 
-  vectorA <- c(1, 2, 3, 4, 5)
+vectorA <- c(1, 2, 3, 4, 5)
 
 x <- matrix(0, nrow = 5, ncol = 5)
 
@@ -28,25 +37,91 @@ for (i in 1:5) {
 }
 
 
-abs(x)
+abs(x) 
+``` 
 
-```
 ``` {r}
+
+
 #2. Print the string "*" using for() function. The output should be the same as shown in Figure
 
-victor<- c(1, 2, 3, 4, 5)
-
-m <- matrix("*", nrow = 5, ncol = 5)
-
 for (i in 1:5) {
-  for (l in 1:5) {
-    if (i == l) {
-      m [i, l] < victor[i]
-      
-    }
-  }
+  stars <- rep ("*", i)
+  
+  print(stars)
 }
 
-print(m)
+```
+
+``` {r}
+#3. Get an input from the user to print the Fibonacci sequence starting from the 1st input up to 500. Use repeat and break statements. Write the R Scripts and its output.
+
+input <- as.integer(readline("Enter the Fibonacci sequence: "))
+
+x <- input
+y <- 0
+
+cat("Fibonacci sequence starting from", input, ":\n")
+
+repeat {
+  nextNum <- x + y
+  
+  if (nextNum > 500) {
+    break
+  }
+  
+  cat (nextNum, " ")
+  x <- y
+  y <- nextNum
+}
+```
+
+``` {r}
+#4. Import the dataset as shown in Figure 1 you have created previously.
+
+#4A.
+
+prevDATA <- read.csv("householdData.csv")
+head(prevDATA)
+
+#4B.
+
+males <- prevDATA[prevDATA$Gender == "M",]
+males
+
+females <- prevDATA[prevDATA$Gender == "F",]
+females
+
+numOfMales <- nrow(males)
+numOfMales
+
+numOfFemales <- nrow(females)
+numOfFemales
+
+#4C.
+
+totalMaleFemale <- table(prevDATA$Gender)
+barplot(totalMaleFemale, main = "Number of Males and Females", xlab = "Gender" ylab = "Count"
+
+```
+
+```{r}
+#The monthly income of Dela Cruz family was spent on the following:
+
+spendingData <- data.frame(
+  Category = c("Food", "Electricity", "Savings", "Miscellaneous"),
+  Value = c(60, 10, 5, 25)
+)
+
+spendingData$Percentage <- spendingData$Value / sum (spendingData$Value) * 100
+
+colors <- c("Yellow", "Red", "Orange", "Blue")
+
+pie(spendingData$Value, labels = paste(spendingData$Category,"(",spendingData$Percentage,"%)"),
+
+col = colors,
+main = ("Monthly Income Spending of Dela Cruz Family")
+
+legend("bottomleft", spendingData$Category, fill = colors)
 
 ```
