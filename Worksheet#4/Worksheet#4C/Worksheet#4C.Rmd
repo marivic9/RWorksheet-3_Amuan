@@ -1,0 +1,63 @@
+---
+title: "Worksheet#4C"
+author: "Marivic Amuan"
+date: "2023-11-22"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+#1. Use the dataset mpg
+
+#1A. a. Show your solutions on how to import a csv file into the environment.
+
+library(readr)
+mpg <- read_csv("Worksheet#4/Worksheet#4C/mpg.csv")
+
+View(mpg)
+
+
+```
+
+```{r}
+#1B. Which variables from mpg dataset are categorical?
+
+categoricalVar <- names(sapply(mpg, is.factor))
+print(categoricalVar)
+
+```
+
+```{r}
+#1C. Which are continuous variables?
+
+continuousVar <- names(sapply(mpg, is.numeric))
+print(continuousVar)
+
+```
+
+```{r}
+#2. Which manufacturer has the most models in this data set? Which model has the most variations? Show your answer.
+
+
+manufacturer_model_counts <- table(manufacturer_models$manufacturer)
+
+
+#2A. Group the manufacturers and find the unique models. Show your codes and result.
+
+manufacturer_models <- unique(mpg[, c("manufacturer", "model")])
+
+#2B. Graph the result by using plot() and ggplot(). Write the codes and its result.
+
+barplot(manufacturer_model_counts, 
+        main = "Number of Models by Manufacturer",
+        xlab = "Manufacturer", 
+        ylab = "Number of Models", 
+        col = "green", 
+        las = 2)
+
+
+```
