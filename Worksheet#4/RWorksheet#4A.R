@@ -1,11 +1,3 @@
----
-title: "RWorksheet#4A"
-author: "Marivic Amuan"
-date: "2023-10-28"
-output: pdf_document
----
-
-```{r name, echo = TRUE }
 #1. The table below shows the data about shoe size and height. Create a data frame.
 
 #1A. Describe the data = AS I input each correspoding data inside the data frame, the data.frame allows me to create a table file to show the inputted datas.
@@ -76,14 +68,17 @@ print(new_order_data)
 
 #5. Enter the data below in Excel with file name = import_march.csv
 
-imported <- read.table(file = "/cloud/project/Worksheet#4A/import_march.csv", header = TRUE, sep = ",")
-    imported
-    
+library(readr)
+import_march <- read_csv("/cloud/project/Worksheet#4A/import_march.csv", 
+                         col_types = cols(`Strategy 1` = col_integer(), 
+                                          `Strategy 2` = col_integer(), `Strategy 3` = col_integer()), 
+                         na = "empty")
+View(import_march)
+
 #5A.Import the excel file into the Environment Pane using read.table() function. Write the code.
 
- library(readr)
-     import_march <- read_csv("/cloud/project/Worksheet#4A/import_march.csv")
-
+imported <- read.table(file = "/cloud/project/Worksheet#4A/import_march.csv", header = TRUE, sep = ",")
+imported
 
 #5B. View the dataset. Write the R scripts and its result.
 
@@ -235,4 +230,3 @@ if (nrow(abovegradeof90) > 0) {
 } else {
   paste("No students have an average math score over 90.")
 }
-```
